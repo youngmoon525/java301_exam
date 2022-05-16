@@ -1,4 +1,4 @@
-(프로그램 작성 경로 : Ex301_Test Java Project 생성 후 pack01.test1 package 추가 후 Test01.class에 작성하시면 됩니다. ) 
+(프로그램 작성 경로 : Ex301_Test Java Project 생성 후  Test01VarOper.class에 작성하시면 됩니다. ) 
 1. 변수 & 연산자
     -1.변수를 이용하여 출력 해보기. ( 정수형 , 실수형 , 문자 , 문자열 ) 데이터를 각각의 변수 dataI , dataD , dataC , dataS 에 담고 출력 해보기.
     --------------------출력결과(console)--------------------
