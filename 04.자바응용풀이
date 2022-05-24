@@ -1,0 +1,61 @@
+프로그램 작성 경로 : Ex301_Test Java Project 생성 후  Test04Java 문제번호.class에 작성하시면 됩니다. ) 
+  ※ 스캐너 사용 시 반드시  nextLine() 메소드를 통해 입력 받습니다 ※
+  
+1. 반드시 int를 return 하는 메소드를 만드세요. (메소드 이름은 rtnInt 이며 숫자 외에 값을 입력 시 다시 입력을 받습니다.)
+    public static void main(String[] args) {
+		System.out.println("숫자를 입력해주세요.");
+		System.out.println("입력 하신 숫자는 " + rtnInt() + "입니다.");
+	}
+	
+	public static  int rtnInt() {
+		Scanner scan = new Scanner(System.in);
+		while(true) {
+			try {
+				 return Integer.parseInt(scan.nextLine()) ;
+			}catch (Exception e) {
+				System.out.println("다시 입력");
+			}
+		}
+	}
+  
+  // whlile문을 통해 loop를 발생시킴. => loop는 특정한 조건을 만족했을때만 return문으로 빠져 나올수가있다.
+  //특정한 조건은 try{} 부분이 실행 되었을때 오류가 없을것. 오류 발생 시 catch 블럭이 실행 되며 다시 반복을 시작한다.
+  //Integer.parseInt를 통해 int형으로 바꿀수있는 데이터는 int형으로 판별하고 return 한다.
+  
+  
+2. 반드시 int가 아닌 데이터 String을 return 하는 메소드를 만드세요. (메소드 이름은 rtnString 이며 숫자 값을 입력 시 다시 입력을 받습니다.)
+	public static void main(String[] args) {
+		System.out.println("문자를 입력해주세요.");
+		System.out.println("입력 하신 문자는 " + rtnString() + "입니다.");
+	}
+	
+	public static  String rtnString() {
+		Scanner scan = new Scanner(System.in);
+		String rtnData = "";
+		while(true) {
+			try {
+				 rtnData= scan.nextLine();
+				 Integer.parseInt(rtnData);
+				 System.out.println("다시 입력");
+			}catch (Exception e) {
+				return rtnData;
+			}
+		}
+	}
+  
+  //1번문제 반대로 풀면 됨.
+       
+3. Scanner sc = 자신의이니셜.scn ; <= 해당하는 코드가 정상적으로 스캐너 객체를 생성할수있게 자유롭게 코딩해보기.public static void main(String[] args) {
+		Scanner sc = Kym.scn();
+		String inputData = sc.nextLine();
+		System.out.println(inputData);
+		
+	}
+	
+	static class Kym{
+		static Scanner scn() {
+			return new Scanner(System.in);
+		}
+	}
+
+
