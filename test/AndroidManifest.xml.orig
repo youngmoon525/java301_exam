@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< .merge_file_a13912
     package="com.example.AAg">
+=======
+    package="com.example.my30_recyclerview1">
+>>>>>>> .merge_file_a14600
 
     <application
         android:allowBackup="true"
