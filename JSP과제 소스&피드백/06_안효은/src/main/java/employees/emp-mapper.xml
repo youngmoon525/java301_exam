@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp"><!-- 외부에서 접근할때 어떤 이름으로 접근을할건지를 지정해놓은 부분 -->
+
+	<!-- ;<- 조회쿼리 작성시 (==jdbc ;<-생략) 생략 -->
+	<select id="emplist" resultType="employees.EmployeesDTO">
+		SELECT  ROWNUM no
+		      , e.employee_id
+		      , e.first_name||' '||e.last_name name
+		      , e.email
+		      , NVL(TO_CHAR(department_id),'정보없음') department_id
+		      , e.phone_number
+		      , NVL(d.department_name,'정보없음') department_name
+		      , c.country_name||' '||l.city||' '||l.street_address||' '||l.postal_code address 
+		      , NVL(TO_CHAR(m.max_sal),'정보없음') max
+		      , NVL(TO_CHAR(m.min_sal),'정보없음') min
+		      , NVL(TO_CHAR(ROUND(m.avg_sal)),'정보없음') avg
+		  FROM    employees e
+		  LEFT OUTER JOIN departments d
+		  USING      (department_id)
+		  LEFT OUTER JOIN locations l
+		  USING      (location_id)
+		  LEFT OUTER JOIN countries c
+		  USING      (country_id)
+		  LEFT OUTER JOIN (SELECT MAX(salary) max_sal, MIN(salary) min_sal, AVG(salary) avg_sal, department_id FROM employees GROUP BY department_id) m
+		  USING (department_id)
+		  ORDER BY ROWNUM
+	</select>
+
+	<!-- 다른 쿼리가 필요하다면 select태그를 이용해서 추가 <select id="listselect2" resultType=""> 
+		</select> -->
+
+
+</mapper>
