@@ -1,0 +1,20 @@
+제목 : JSP 과제 피드백
+
+작성 일자:2022.07.12
+
+작성자 : 김영문
+
+내용 : DTO 변수(필드,멤버변수) 이름 dname, arr => department_name , area,address,addr,location등으로 
+데이터베이스 컬럼이름 또는 다른 사람이 봤을때 알아볼수있는 의미있는 단어를 사용,
+알아볼수있게끔 해주는게 좋을것같습니다.
+
+hr-mapper의 경우 쿼리는 잘 짜신것같은데 from employeesgroup 부분 띄어쓰기가 없어 실행이 될지
+의문이 듭니다. 만약에 해결이 안되셨다면 띄어쓰기를 꼭해주세요 
+from employeesgroup 과 from employees group by.. 는 다릅니다
+또 쿼리중 DEPARTMENT_NAME등 문자형데이터 타입은 TO_CHAR 캐스팅 해줄필요가 없습니다.
+
+
+다른부분은 흠잡을것없이 완벽하게 구현하셨으며 쿼리부분에 NVL처리와 금액부분 TO_CHAR로
+정보없음 표현하신부분이라든지 데이터베이스 실력이 많이 좋아지신것같습니다
+
+고생하셨습니다.

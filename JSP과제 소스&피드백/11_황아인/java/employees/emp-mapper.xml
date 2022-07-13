@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp"><!-- 외부에서 접근할때 어떤 이름으로 접근을 할건지 지정해 놓은 부분 -->
+<!-- <resultMap type="" id="">
+</resultMap> <= java-camel case <=> DB - snake_case 형식으로 
+맵핑이 되지 않을때 사용하는것. 일단 계속 진행해보자  -->
+<!-- mybatis.configuration.map-underscore-to-camel-case=true 
+java-camel case <=> DB - snake_case 인식하고 바꿔서 값을 넣어주는 코드
+config 파일에 추가 코드 기입해야함.
+-->
+
+  <select id="empselect" resultType="employees.EmpDTO">
+	SELECT e.employee_id eid, e.last_name||' '||e.first_name as name 
+	, e.email as email, NVL(TO_CHAR(e.department_id),'정보없음') as did, e.phone_number as phone
+	, NVL(d.department_name,'정보없음') as dname
+	, NVL(c.country_name,'정보없음')||' '||l.state_province||' '||l.city||' '||l.street_address||' '||l.postal_code as adrAll
+	, NVL(b.max_sal, '정보없음') as max_sal
+	, NVL(b.min_sal, '정보없음') as min_sal, NVL(b.avg_sal, '정보없음') as avg_sal 
+	FROM employees e LEFT OUTER JOIN departments d ON e.department_id = d.department_id 
+	LEFT OUTER JOIN locations l ON d.location_id = l.location_id 
+	LEFT OUTER JOIN countries c ON l.country_id = c.country_id 
+	LEFT OUTER JOIN (SELECT NVL(TO_CHAR(MAX(salary)), '정보없음') max_sal
+	, NVL(TO_CHAR(MIN(salary)),'정보없음') min_sal, NVL(TO_CHAR(ROUND(AVG(salary))), '정보없음') avg_sal
+	, department_id FROM employees GROUP BY department_id) b ON e.department_id = b.department_id
+  </select>
+  
+  
+
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">		
+
+<!-- 
+	id :외부에서 접근할 때 클래스의 이름을 주는 것 처럼 접근할 이름을 지정 test.selectTest 라고 외부에서 접근하면 아래 태그실행
+	resultType : 클래스 타입을 적어준다. 
+	
+	-->
+  
+  <select id="selectTest" resultType="Integer">
+    	select 10 as num1 from dual
+  </select>
+  
+  
+</mapper>
