@@ -1,0 +1,29 @@
+From 1e30b5f698de2f20f26f636f890730def31095c7 Mon Sep 17 00:00:00 2001
+From: "DESKTOP-ATSLSEN\\lcocal" <youngmoon525@naver.com>
+Date: Thu, 14 Jul 2022 10:37:35 +0900
+Subject: [PATCH] =?UTF-8?q?=ED=9C=B4=EB=A8=BC2=20=EC=9E=90=EA=B2=81?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ test/test.txt | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/test/test.txt b/test/test.txt
+index 77f0e09..f8de384 100644
+--- a/test/test.txt
++++ b/test/test.txt
+@@ -1,5 +1,3 @@
+-<<<<<<< HEAD
+-BVBBBBBBBBBBBBBBB
+-=======
+-AAAAAAAAAAA
+->>>>>>> afaf
++HUMAN2작업
++작업작업12
++작업12
+\ No newline at end of file
+-- 
+2.29.2.windows.2
+
