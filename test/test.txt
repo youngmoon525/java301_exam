@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-BVBBBBBBBBBBBBBBB
-=======
-AAAAAAAAAAA
->>>>>>> afaf
+HUMAN1 작업부분
+작업작업
+작업작업
